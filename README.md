@@ -52,15 +52,25 @@ The project is structured for maintainability, scalability, and production readi
 The project is structured for **maintainability and scalability**:
 
 ├── data/
+
 ├── notebooks/
+
 ├── src/
+
 │   ├── data_processing.py
+
 │   ├── feature_engineering.py
+
 │   ├── train.py
+
 │   ├── evaluate.py
+
 │   └── utils.py
+
 ├── models/
+
 ├── outputs/
+
 └── README.md
 
 ---
