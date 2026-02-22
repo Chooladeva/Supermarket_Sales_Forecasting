@@ -43,54 +43,38 @@ This project addresses these limitations through a data-driven forecasting frame
 
 EDA ensured that modelling assumptions were grounded in data behavior rather than guesswork.
 
-## Project Architecture
+## Pipeline Design
 
-The project is structured for maintainability, scalability, and production readiness.
+The entire workflow is modularized inside the src/ directory.
 
-### Folder Structure & Pipeline Organization:
+- **Data Processing:** Clean and preprocess raw data to generate model-ready inputs.
+- **Primary Keys:** Identify unique identifiers such as outlet, item category, and week.
+- **Target Variable:** Define sales for the next week as the prediction target.
+- **Feature Engineering:** Create features based on sales history, item characteristics, time, and outlet information.
+- **Pipeline Creation (src/ folder):** Modular pipeline for preprocessing, feature engineering, and model training.
+- **Model Training & Evaluation:** Train predictive models and evaluate performance using **Mean Absolute Percentage Error (MAPE)** at the granularity of **Outlet | Item Category | Week**.
 
-The project is structured for **maintainability and scalability**:
-
-├── data/
-
-├── notebooks/
-
-├── src/
-
-│   ├── data_processing.py
-
-│   ├── feature_engineering.py
-
-│   ├── train.py
-
-│   ├── evaluate.py
-
-│   └── utils.py
-
-├── models/
-
-├── outputs/
-
-└── README.md
-
----
-
-## **Key Benefits**
+## Key Outcomes
 
 - Provides **accurate sales forecasts** for top-selling categories.  
 - Enables better **inventory planning and stock optimization**.  
 - Supports **supply chain management** by predicting customer demand effectively.  
 - Modular pipeline allows easy **scalability and adaptation** for additional stores or categories.
 
----
-
-## **Technologies Used**
+## Tech Stack
 
 - **Programming:** Python  
 - **Libraries:** pandas, numpy, scikit-learn, matplotlib, seaborn  
-- **Pipeline Management:** Modular Python scripts (`src/` folder)  
+- **Architecture:** Modular ML pipeline (src/ structure) 
 - **Evaluation Metrics:** Mean Absolute Percentage Error (MAPE)  
 
----
+## Scalability & Future Improvements
 
-The project provides a comprehensive solution for forecasting sales for different departments and stores, helping to improve inventory management, optimize supply chain operations, and ensure that businesses can meet customer demand effectively.
+Potential extensions:
+
+- Add promotion and pricing data
+- Integrate weather effects
+- Use advanced models (XGBoost, LightGBM)
+- Implement hierarchical forecasting
+- Deploy via API for real-time inference
+- Add automated retraining workflow
