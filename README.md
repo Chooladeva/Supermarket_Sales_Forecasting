@@ -1,24 +1,67 @@
-# Supermarket Sales Forecasting
+# Supermarket Sales Forecasting — Next-Week Demand Prediction
 
-This project focuses on **predicting next-week sales** for the top 5 fast-moving categories across selected departments and stores. Key departments include **Grocery, Beverages, and Chilled**, while target stores are **A, B, C, D, and E**. The objective is to develop a **robust predictive model** using historical transactional data to improve inventory management and supply chain operations.
+## Executive Summary
 
----
+This project develops a robust machine learning pipeline to predict next-week sales for the top 5 fast-moving categories across selected supermarket departments and stores.
 
-## **Project Overview**
+**Target departments include:**
 
-1. **Descriptive Analysis (EDA):**  
+- Grocery
+- Beverages
+- Chilled
+
+**Target outlets:**
+
+- Store A
+- Store B
+- Store C
+- Store D
+- Store E
+
+The objective is to improve inventory optimization, replenishment planning, and supply chain efficiency by leveraging historical transactional data and structured forecasting techniques.
+
+## Business Problem
+
+Retail environments require accurate short-term forecasts to:
+
+- Prevent stockouts
+- Reduce overstocking
+- Optimize working capital
+- Improve customer satisfaction
+- Traditional rule-based replenishment methods fail to capture:
+- Weekly seasonality
+- Store-level variations
+- Category-level demand fluctuations
+- Promotion-driven demand shifts
+
+This project addresses these limitations through a data-driven forecasting framework.
+
+## Exploratory Descriptive Analysis (EDA):
    - Explored historical sales data to identify trends, patterns, and correlations.  
    - Validated assumptions and ensured data quality using descriptive statistics, visualizations, and hypothesis testing.  
    - Determined key drivers affecting sales across departments and stores.
 
-2. **Folder Structure & Pipeline Organization:**  
-   The project is structured for **maintainability and scalability**:
-   - **Data Processing:** Clean and preprocess raw data to generate model-ready inputs.  
-   - **Primary Keys:** Identify unique identifiers such as outlet, item category, and week.  
-   - **Target Variable:** Define sales for the next week as the prediction target.  
-   - **Feature Engineering:** Create features based on sales history, item characteristics, time, and outlet information.  
-   - **Pipeline Creation (`src/` folder):** Modular pipeline for preprocessing, feature engineering, and model training.  
-   - **Model Training & Evaluation:** Train predictive models and evaluate performance using **Mean Absolute Percentage Error (MAPE)** at the granularity of **Outlet | Item Category | Week**.
+EDA ensured that modelling assumptions were grounded in data behavior rather than guesswork.
+
+## Project Architecture
+
+The project is structured for maintainability, scalability, and production readiness.
+
+### Folder Structure & Pipeline Organization:
+
+The project is structured for **maintainability and scalability**:
+
+├── data/
+├── notebooks/
+├── src/
+│   ├── data_processing.py
+│   ├── feature_engineering.py
+│   ├── train.py
+│   ├── evaluate.py
+│   └── utils.py
+├── models/
+├── outputs/
+└── README.md
 
 ---
 
